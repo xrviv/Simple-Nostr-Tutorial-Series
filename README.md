@@ -28,8 +28,9 @@ I could not vouch for the security or feasibility of any of the code. In short, 
    4.1 Explanation of Nostr relays and their role
    4.2 Connecting to a relay and understanding relay functions
    4.3 Nostr kinds
-   4.4 Project: Connect to a relay and subscribe to all kind 1 events
-   - Publishing events to a relay
+   4.4 Project - Connect to a relay and subscribe to all kind 1 events
+   4.5 Project - Querying a relay NIP-11
+   4.6 Project - Publishing an event to a relay + NoteID
 5. Building a Basic User Interface
    - Setting up a basic web server with Express.js
    - Creating a simple front-end to input and display messages

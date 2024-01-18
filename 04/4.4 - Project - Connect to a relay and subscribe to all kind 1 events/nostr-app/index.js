@@ -2,7 +2,7 @@ global.WebSocket = require('ws');
 const { Relay } = require('nostr-tools');
 
 async function subscribeToAllTextNotes() {
-  const relayUrl = 'wss://nostr.wine'; // Replace with your relay URL
+  const relayUrl = 'wss://nos.lol'; // Replace with your relay URL
   try {
     const relay = await Relay.connect(relayUrl);
     console.log(`Connected to relay ${relay.url}`);

@@ -19,16 +19,16 @@ I could not vouch for the security or feasibility of any of the code. In short, 
    - Installation of Node.js and setting up a new Node.js project
    - Basics of using npm (Node Package Manager)
 2. Generating and Understanding Keys
-   - Generating a private and public key using nostr-tools
-   - Understanding the role of keys in Nostr
+   2.1 Generating a private and public key using nostr-tools
+   2.2 Understanding the role of keys in Nostr
 3. Creating and Signing Events
-   - Understanding what events are in Nostr
-   - Code to create a basic event (e.g., a text post)
-   - Signing the event with a private key
+   3.1 Understanding what events are in Nostr
+   3.2 Code to create a basic event (e.g., a text post)
 4. Interacting with Relays
-   - Explanation of Nostr relays and their role
-   - Connecting to a relay and understanding relay functions
-   - Subscribing to events from a relay
+   4.1 Explanation of Nostr relays and their role
+   4.2 Connecting to a relay and understanding relay functions
+   4.3 Nostr kinds
+   4.4 Project: Connect to a relay and subscribe to all kind 1 events
    - Publishing events to a relay
 5. Building a Basic User Interface
    - Setting up a basic web server with Express.js

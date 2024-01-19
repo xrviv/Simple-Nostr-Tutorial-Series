@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Styled Nostr Events</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 3fr 1fr;
+            width: 100%;
+            max-width: 1200px;
+        }
+        .events-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .event-item {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 10px;
+            font-size: 14px;
+        }
+        .event-item:nth-child(even) {
+            background-color: #eee;
+        }
+        .timestamp {
+            font-size: 10px;
+            color: #666;
+        }
+    </style>
+    <script>
+        var socket;
+    
+        function setupWebSocket() {
+            socket = new WebSocket('ws://localhost:3000');
+            socket.onmessage = function(event) {
+                var data = JSON.parse(event.data);
+                
+                // Check if the data contains a content field
+                if (data.content) {
+                    var node = document.createElement("LI");
+                    node.classList.add('event-item');
+
+                    var contentNode = document.createTextNode(data.content);
+                    var contentSpan = document.createElement("SPAN");
+                    contentSpan.appendChild(contentNode);
+
+                    var timestampNode = document.createTextNode(new Date(data.created_at * 1000).toLocaleString());
+                    var timestampSpan = document.createElement("SPAN");
+                    timestampSpan.appendChild(timestampNode);
+                    timestampSpan.classList.add('timestamp');
+
+                    node.appendChild(contentSpan);
+                    node.appendChild(document.createElement("BR"));
+                    node.appendChild(timestampSpan);
+
+                    document.getElementById("eventsList").appendChild(node);
+                }
+            };
+        }
+    
+        window.onload = setupWebSocket;
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="left-column"></div>
+        <div class="middle-column">
+            <h1>Nostr Text Note Events</h1>
+            <a href="index.html">Show raw content</a>
+            <a href="content.html">Show only content</a>
+            <ul id="eventsList" class="events-list"></ul>
+        </div>
+        <div class="right-column"></div>
+    </div>
+</body>
+</html>

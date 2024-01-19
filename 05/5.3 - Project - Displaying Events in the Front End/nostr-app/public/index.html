@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nostr Events</title>
+    <script>
+        var socket;
+
+        function setupWebSocket() {
+            socket = new WebSocket('ws://localhost:3000');
+            socket.onmessage = function(event) {
+                var data = JSON.parse(event.data);
+                var node = document.createElement("LI");
+                var textnode = document.createTextNode(JSON.stringify(data));
+                node.appendChild(textnode);
+                document.getElementById("eventsList").appendChild(node);
+            };
+        }
+
+        window.onload = setupWebSocket;
+    </script>
+</head>
+<body>
+    <h1>Nostr Text Note Events</h1>
+    <a href="content.html">Show only content</a>
+    <a href="styled.html">Show styled content</a>
+    <ul id="eventsList"></ul>
+</body>
+</html>

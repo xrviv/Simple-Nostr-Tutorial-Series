@@ -2,14 +2,17 @@ const express = require('express');
 global.WebSocket = require('ws');
 const http = require('http');
 const { Relay } = require('nostr-tools');
+const path = require('path');
 
 const app = express();
 const server = http.createServer(app);
 const wss = new WebSocket.Server({ server });
 
-app.get('/', (req, res) => {
+/* app.get('/', (req, res) => {
     res.sendFile(__dirname + '/index.html');
-});
+});*/
+
+app.use(express.static(path.join(__dirname, 'public')));
 
 wss.on('connection', ws => {
     console.log('Client connected');

@@ -33,7 +33,7 @@ I could not vouch for the security or feasibility of any of the code. In short, 
    - 4.6 Project - Publishing an event to a relay + NoteID
 5. Building a Basic User Interface
    - 5.1 Setting up a basic web server with Express.js
-   - 5.2 Creating a simple front-end to input and display messages
+   - 5.2 Create a Basic Front End for the Express.js Nostr Server
    - 5.3 Sending and receiving data from the client to the server
 6. Handling Real-time Updates with WebSockets
    - 6.1 Integrating WebSockets for real-time communication

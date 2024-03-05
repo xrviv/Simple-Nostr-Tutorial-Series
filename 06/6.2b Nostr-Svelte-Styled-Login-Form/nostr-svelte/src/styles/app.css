@@ -1,0 +1,16 @@
+.flowbite-button {
+    /* Default Flowbite-like styles */
+    background-color: #f3f4f6;
+    color: #2c323c;
+    border: 1px solid #e3e6e8;
+    border-radius: 4px;
+    padding: 8px 16px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+  }
+  
+  .flowbite-button:hover {
+    background-color: #e9edf1;
+  }
+  

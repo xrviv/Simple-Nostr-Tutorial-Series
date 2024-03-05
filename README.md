@@ -11,6 +11,8 @@
 
 **Disclaimer:** I am learning about Nostr myself and absolutely do not consider myself an expert on the matter. This is experimental. 
 I could not vouch for the security or feasibility of any of the code. In short, by following this, you are taking responsibility for your own risks.
+**Warning:** As of March 4, 2024, there are bugs borne from the changes in nostr-tools and some other dependencies. I haven't gotten the time to review the code until lesson 4.6, but I am working on it.
+
 
 ## The Evolving Nostr Tutorial Outline
 
